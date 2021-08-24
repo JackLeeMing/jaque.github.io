@@ -1,0 +1,110 @@
+.wrap {
+  width: 960px;
+  height: 417px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+  -webkit-perspective: 1600;
+  perspective-origin: 50% 50%;
+  position: relative;
+  overflow: visible;
+}
+.wrap img.demo {
+  position: absolute;
+}
+/**
+backwards 元素展现动画开始时的属性状态
+forwards 元素展现动画结束后的属性状态
+*/
+.wrap img.demo:first-child {
+  width: 275px;
+  height: 328px;
+  animation: img1 0.7s ease-out 0.5s backwards;
+  left: -15px;
+  bottom: 0;
+}
+.wrap img.demo:nth-child(2) {
+  width: 291px;
+  height: 312px;
+  animation: img1 0.7s ease-out 0.2s backwards;
+  left: 155px;
+  bottom: 44px;
+}
+.wrap img.demo:nth-child(3) {
+  width: 354px;
+  height: 371px;
+  animation: img2 0.8s linear backwards;
+  left: 308px;
+  top: -15px;
+}
+.wrap img.demo:nth-child(4) {
+  width: 303px;
+  height: 263px;
+  animation: img3 0.7s ease-out 0.2s backwards;
+  /*
+  name duration function delay count direction fill-mode play-state
+  */
+  left: 508px;
+  top: 4px;
+}
+.wrap img.demo:last-child {
+  width: 306px;
+  height: 226px;
+  animation: img3 0.7s ease-out 0.5s backwards;
+  left: 653px;
+  top: -19px;
+}
+
+@keyframes img1 {
+  0% {
+    transform: translate3d(-2000px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes img2 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.95);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes img3 {
+  0% {
+    transform: translate3d(2000px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
